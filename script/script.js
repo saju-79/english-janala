@@ -21,7 +21,7 @@ document.getElementById("start-btn").addEventListener("click" , function(e){
         document.getElementById("main-section").classList.remove("hidden");
          document.getElementById("level-sction").classList.remove("hidden");
         loderBtn()
-        
+         document.getElementById("faq-section").classList.remove("hidden");
         
     }else{alert("inter your wrong password")}
 })
@@ -31,6 +31,7 @@ document.getElementById("LogOut-btn").addEventListener("click" , function(){
         document.getElementById("faq-section").classList.add("hidden");
      document.getElementById("img-div").classList.remove("hidden");
       document.getElementById("main-section").classList.add("hidden");
+       document.getElementById("faq-section").classList.add("hidden");
      hiddenLoding()
 });
 const loderBtn = () =>{
@@ -39,17 +40,19 @@ const loderBtn = () =>{
     .then( (res) => res.json())
     .then((data) => displayLoder(data.data))
 }
-const displayLoder = (datas)=>{
+const displayLoder = (datas)=> { 
+    
     hiddenLoding()
      document.getElementById("level-sction").classList.remove("hidden");
         document.getElementById("faq-section").classList.add("hidden");
     const headerBtn = document.getElementById("header-buuton");
     datas.forEach(data => {
+        
         const div = document.createElement("div");
         div.innerHTML =`
         <button 
         onclick="levelLoder('${data.level_no}')"
-        id="btn-Lesson"  class="btn    font-medium flex gap-1 ">
+        id="btn-Lesson"  class="btn in-active   font-medium flex gap-1 ">
         <img src="/imges/fa-book-open.png" alt="">
         Lesson -${data.level_no}</button>
         `
@@ -70,14 +73,19 @@ const levelLoder = (id) =>{
 
 const displayLevl = (levels) =>{
     hiddenLoding()
+
+    //  button not dynamic
+    
+    
+
      document.getElementById("level-sction").classList.remove("hidden");
         document.getElementById("faq-section").classList.add("hidden");
     const erroePagse = document.getElementById("error-pagse");
     if(levels.length<1){
         erroePagse.classList.remove("hidden");
-
     }else{
          erroePagse.classList.add("hidden");
+         
     }
     const LevelSection = document.getElementById("level-sction");
     LevelSection.innerHTML =""
@@ -168,10 +176,12 @@ ditesBtn.appendChild(div);
  hiddenLoding()
 
  document.getElementById("faq-btn").addEventListener("click" , function(){
+    hiddenLoding()
    document.getElementById("faq-section").classList.remove("hidden");
    document.getElementById("level-sction").classList.add("hidden");
  } , 400)
 
   document.getElementById("level-sction").classList.remove("hidden");
+   document.getElementById("faq-section").classList.add("hidden");
 
  
