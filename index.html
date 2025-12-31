@@ -28,7 +28,7 @@
             <h3 class="text-lg text-[#18181B] font-semibold">জানালা</h3>
         </div>
         <div class="flex space-x-4">
-            <button class="flex gap-1 btn  text-[#422AD5] font-semibold text-lg btn-outline      ">
+            <button id="faq-btn" class="flex gap-1 btn  text-[#422AD5] font-semibold text-lg btn-outline      ">
                 <img   src="imges/fa-circle-question.png" alt="">
                 FAQ</button>
             <button class="btn gap-1 flex text-[#422AD5] font-semibold text-lg btn-outline   ">
@@ -40,6 +40,14 @@
         </div>
     </nav>
    </header>
+   <div id="loding" class=" text-center p-6 mt-5">
+     <span class="loading loading-spinner loading-xs"></span>
+<span class="loading loading-spinner loading-sm"></span>
+<span class="loading loading-spinner loading-md"></span>
+<span class="loading loading-spinner loading-lg"></span>
+<span class="loading loading-spinner loading-xl"></span>
+
+   </div>
    <main class="w-11/12 mx-auto mt-10 ">
        <section  class="   lg:flex justify-between items-center  md:flex ">
         <div id="heaser-section" class="space-y-5   ">   
@@ -59,18 +67,7 @@
         <h1 class="text-[#00BCFF] font-bold text-3xl">Let's<span class="text-[#181818]"> Learn Vocabularies </span> </h1>
         <div id="header-buuton" class=" flex gap-4 text-center justify-center items-center"></div>
         <div id="level-sction" class="   gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4"></div>
-    
-<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle overflow-scroll gap-2 p-2">
- 
-</dialog>~  
-
-
-
-
-
-
-
-     <!-- error section -->
+       <dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle overflow-scroll gap-2 p-2"></dialog>     <!-- error section -->
       <section id="error-pagse" class="mt-10 hidden">
         <div class="text-center flex flex-col items-center justify-center  " >
             <img class="w-52" src="imges/alert-error.png" alt="">
@@ -78,41 +75,69 @@
             <h3 class="text-xl font-bold mt-4 ">নেক্সট Lesson এ যান</h3>
         </div>
       </section>
+        <!-- faq section -->
+         
+    </main>
+    <section id="faq-section" class=" text-start w-11/12 mx-auto">
+ <div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" checked="checked" />
+  <div class="collapse-title font-semibold">the difference between var, let, and const</div>
+  <div class="collapse-content text-sm"> answer </div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">the difference between map(), forEach(), and filter()</div>
+  <div class="collapse-content text-sm"> answer</div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">how closures work in JavaScript</div>
+  <div class="collapse-content text-sm">answer</div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">how JavaScript Promises work</div>
+  <div class="collapse-content text-sm">answer</div>
+</div>
+<div class="collapse collapse-plus bg-base-100 border border-base-300">
+  <input type="radio" name="my-accordion-3" />
+  <div class="collapse-title font-semibold">explain arrow functions and how they are different from regular functions</div>
+  <div class="collapse-content text-sm">answer</div>
+</div>
+         </section>
 
-       
-        
-   </main>
-   <footer class="w-11/12 mx-auto mt-10 ">
-
-
-
-<!-- Open the modal using ID.showModal() method -->
-<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-   </footer>
+   <footer class="footer sm:footer-horizontal bg-[#fdf5f5f3] text-neutral-content items-center p-4 w-11/12 mx-auto mt-10">
+  <aside class="grid-flow-col items-center">
+     
+    <div class=" space-y-2">
+        <div class="flex">
+            <h3 class="text-lg text-[#18181B] font-semibold">English</h3>
+            <img class="w-6" src="imges/logo.png" alt="">
+            <h3 class="text-lg text-[#18181B] font-semibold">জানালা</h3>
+        </div>
+        <p  class="text-[#181818] font-medium text-lg">ইংরেজি শিখুন সহজে</p>
+        <p class="text-[#181818] font-medium text-sm">Providing ED-Tech Applications since 2025</p>
+    </div>
+  </aside>
+  <nav class="  gap-4 md:place-self-center md:justify-self-end">
+      <p class="text-lg text-[#18181B] font-extralight" >Follow us</p>
+     <div class=" flex gap-4 items-center">
+     <a>
+       <img src="imges/fb-thumb.png" alt="">
+    </a>
+    <a>
+      <img src="imges/instagram-thumb.png" alt="">
+    </a>
+    <a>
+     <img src="imges/github-thumb.png" alt="">
+    </a>
+    <a>
+     <img src="imges/youtube-thumb.png" alt="">
+    </a>
+     </div>
+  </nav>
+</footer> 
+ 
     <script src="script/script.js"></script>
 </body>
 </html>

@@ -1,8 +1,17 @@
- document.getElementById("main-section").classList.add("hidden");
-
+ const hiddenLoding = () =>{
+    document.getElementById("loding").classList.add("hidden")
+}
+const showModel = () =>{
+    document.getElementById("loding").classList.remove("hidden")
+}
+document.getElementById("main-section").classList.add("hidden");
+document.getElementById("faq-section").classList.add("hidden");
+   document.getElementById("level-sction").classList.remove("hidden");
+   
 // first baner 
 document.getElementById("start-btn").addEventListener("click" , function(e){
     // e.defaultPrevented()
+       hiddenLoding()
     e.preventDefault()
     const password = document.getElementById("password-int").value;
     const convertpass = parseInt(password);
@@ -10,6 +19,7 @@ document.getElementById("start-btn").addEventListener("click" , function(e){
         document.getElementById("heaser-section").classList.add("hidden");
         document.getElementById("img-div").classList.add("hidden");
         document.getElementById("main-section").classList.remove("hidden");
+         document.getElementById("level-sction").classList.remove("hidden");
         loderBtn()
         
         
@@ -18,16 +28,21 @@ document.getElementById("start-btn").addEventListener("click" , function(e){
 // api section
 document.getElementById("LogOut-btn").addEventListener("click" , function(){
      document.getElementById("heaser-section").classList.remove("hidden");
+        document.getElementById("faq-section").classList.add("hidden");
      document.getElementById("img-div").classList.remove("hidden");
       document.getElementById("main-section").classList.add("hidden");
-    
+     hiddenLoding()
 });
 const loderBtn = () =>{
+    showModel()
     fetch("https://openapi.programming-hero.com/api/levels/all")
     .then( (res) => res.json())
     .then((data) => displayLoder(data.data))
 }
 const displayLoder = (datas)=>{
+    hiddenLoding()
+     document.getElementById("level-sction").classList.remove("hidden");
+        document.getElementById("faq-section").classList.add("hidden");
     const headerBtn = document.getElementById("header-buuton");
     datas.forEach(data => {
         const div = document.createElement("div");
@@ -41,10 +56,11 @@ const displayLoder = (datas)=>{
         headerBtn.appendChild(div);
        
     });
-    
+ 
    
 }
 const levelLoder = (id) =>{
+    showModel()
     const url = `https://openapi.programming-hero.com/api/level/${id}`
     fetch(url).then((res) => res.json())
     .then((data) =>{
@@ -53,6 +69,9 @@ const levelLoder = (id) =>{
 }
 
 const displayLevl = (levels) =>{
+    hiddenLoding()
+     document.getElementById("level-sction").classList.remove("hidden");
+        document.getElementById("faq-section").classList.add("hidden");
     const erroePagse = document.getElementById("error-pagse");
     if(levels.length<1){
         erroePagse.classList.remove("hidden");
@@ -97,12 +116,16 @@ LevelSection.appendChild(div)
 }
 
 const LodDitels = (id) =>{
+    showModel()
     fetch(`https://openapi.programming-hero.com/api/word/${id}`)
     .then((res) => res.json())
     .then((data) => displayDitels(data.data))
 
 }
 const displayDitels = (ditels) =>{
+    hiddenLoding()
+     document.getElementById("level-sction").classList.remove("hidden");
+       document.getElementById("faq-section").classList.add("hidden");
     const ditesBtn = document.getElementById("my_modal_5");
     ditesBtn.showModal()
     const div = document.createElement("div");
@@ -121,9 +144,9 @@ const displayDitels = (ditels) =>{
     <div class="">
         <h4 class="text-md font-semibold">সমার্থক শব্দ গুলো</h4>
         <p class="flex gap-2">
-            <button class="btn">${ditels.synonyms[0]}</button>
-            <button class="btn">${ditels.synonyms[1]}</button>
-            <button class="btn">${ditels.synonyms[2]}</button>
+            <button class="btn">${ditels.synonyms[0]? ditels.synonyms[0] : ""}</button>
+            <button class="btn">${ditels.synonyms[1] ? ditels.synonyms[1] : ""}</button>
+            <button class="btn">${ditels.synonyms[2] ? ditels.synonyms[1] : ""}</button>
         </p>
     </div>
  
@@ -142,3 +165,13 @@ const displayDitels = (ditels) =>{
 ditesBtn.appendChild(div);
            
 }
+ hiddenLoding()
+
+ document.getElementById("faq-btn").addEventListener("click" , function(){
+   document.getElementById("faq-section").classList.remove("hidden");
+   document.getElementById("level-sction").classList.add("hidden");
+ } , 400)
+
+  document.getElementById("level-sction").classList.remove("hidden");
+
+ 
