@@ -6,6 +6,18 @@
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
 <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+<style>
+     .active{
+        background-color: #422AD5;
+        color: aliceblue;
+        font-size:bold;
+     }
+     .in-active {
+        background-color: aliceblue;
+        color:#422AD5; ;
+     }
+     
+</style>
 </head>
 <body>
    <header class="">
@@ -22,26 +34,85 @@
             <button class="btn gap-1 flex text-[#422AD5] font-semibold text-lg btn-outline   ">
                  <img src="imges/fa-book-open.png" alt="">
                 Learn</button>
-            <button class="btn gap-1 text-[#422AD5] font-semibold text-lg flex btn-outline ">
+            <button id="LogOut-btn" class="btn gap-1 text-[#422AD5] font-semibold text-lg flex btn-outline ">
                 <img src="imges/fa-arrow-right-from-bracket.png" alt="">
                 LogOut</button>
         </div>
     </nav>
    </header>
    <main class="w-11/12 mx-auto mt-10 ">
-       <section class=" lg:flex justify-between items-center  md:flex ">
-           <div class="space-y-5  ">   
+       <section  class="   lg:flex justify-between items-center  md:flex ">
+        <div id="heaser-section" class="space-y-5   ">   
                <h1 class="text-4xl font-bold text-[#00BCFF]">Einglish <span class="text-[#181818]">is Easy!!</span></h1>
                <p class="text-lg font-medium ">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা <br> আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br> যাবে অন্য একটি Level এ</p>
-               <input type="text" placeholder="Enter Your Name" class="input input-primary" />
-               <input type="password" value="123456" placeholder="Enter Your password" class="input input-primary" /> <br>
-               <button class="btn bg-[#422AD5] text-sm text-white ">Get Started</button>
+               <input type="text" placeholder="Enter Your Name" class="input input-primary" /> <br>
+               <input id="password-int" type="password" value="123456" placeholder="Enter Your password" class="input input-primary" /> <br>
+               <button id="start-btn"  class="btn bg-[#422AD5] text-sm text-white ">Get Started</button>
         </div>
-        <div class=" items-center px-8">
+        <div id="img-div" class=" items-center px-8   ">
             <img class="w-90"  src="imges/hero-student.png" alt="">
         </div>
+      
     </section>
+    <!-- button section  -->
+     <section id="main-section" class=" text-center space-y-6 mt-6">
+        <h1 class="text-[#00BCFF] font-bold text-3xl">Let's<span class="text-[#181818]"> Learn Vocabularies </span> </h1>
+        <div id="header-buuton" class=" flex gap-4 text-center justify-center items-center"></div>
+        <div id="level-sction" class="   gap-5 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 p-4"></div>
+    
+<dialog id="my_modal_5" class="modal modal-bottom sm:modal-middle overflow-scroll gap-2 p-2">
  
+</dialog>~  
+
+
+
+
+
+
+
+     <!-- error section -->
+      <section id="error-pagse" class="mt-10 hidden">
+        <div class="text-center flex flex-col items-center justify-center  " >
+            <img class="w-52" src="imges/alert-error.png" alt="">
+            <p class="text-sm font-extralight ">  এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+            <h3 class="text-xl font-bold mt-4 ">নেক্সট Lesson এ যান</h3>
+        </div>
+      </section>
+
+       
+        
    </main>
+   <footer class="w-11/12 mx-auto mt-10 ">
+
+
+
+<!-- Open the modal using ID.showModal() method -->
+<!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+   </footer>
+    <script src="script/script.js"></script>
 </body>
 </html>
